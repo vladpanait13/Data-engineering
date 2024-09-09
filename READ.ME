@@ -1,0 +1,30 @@
+This is a breakdown for our first python script, "website_dataset_cleaned.py"
+The "website_dataset.csv" had a weird data format so I had to do some cleaning and formatting.
+
+Steps:
+- Imports the necessary libraries (pandas).
+- Defines the raw data as a string (the original data).
+- Reads the data into a pandas DataFrame.
+- Cleans and formats the data:
+
+1. Removes leading/trailing whitespace.
+2. Capitalizes the first letter of each word in most fields.
+3. Applies specific formatting to country, region, site name, and category fields.
+4. Formats phone numbers by adding a '+' prefix to 11-digit numbers.
+
+
+- Saves the cleaned data to a new CSV file named 'website_dataset_cleaned.csv', which will be used in our final script.
+- Prints the first few rows of the cleaned data and a confirmation message.
+
+The decision-making process required for the final task (implemented in "script.py" file):
+
+1. To address your first question, "What column will you use to join?", I used the domain as the joining key. This is because the domain is likely to be the most consistent identifier across all three datasets.
+2. Conflict Resolution:
+To address your second and third questions about data conflicts and similar data, I implemented a conflict resolution strategy:
+I created a resolve_conflicts function that prioritizes the following order: Google, Facebook, Website. The reasoning behind it was that Google had more information than Facebook or Website (the longest string is the more relevant one when multiple non-null values are available). This approach assumes that longer strings potentially contain more information.
+
+
+Final Dataset Creation:
+I created a final dataset with resolved columns for domain, name, category, address, and phone.
+
+
